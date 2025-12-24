@@ -7,7 +7,7 @@ interface Book {
   id: number
   title: string
   status: '在馆' | '借出' | '丢失'
-  authors: { name: string }
+  authors: { name: string } | { name: string }[]
 }
 
 interface Reader {
@@ -254,7 +254,7 @@ export default function Home() {
                             {book.title}
                           </h3>
                           <p className="text-sm text-gray-600 mb-3">
-                            作者：{book.authors?.name || '未知'}
+                            作者：{Array.isArray(book.authors) ? book.authors.map(a => a.name).join('、') : book.authors?.name || '未知'}
                           </p>
                         </div>
                         <div className="flex items-center gap-3 flex-shrink-0">
