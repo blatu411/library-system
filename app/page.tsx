@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useState, useMemo } from 'react'
+import Link from 'next/link'
 
 import type { Book, Reader } from '@/lib/types'
 import { BorrowModal } from '@/app/components/BorrowModal'
@@ -342,12 +343,13 @@ export default function Home() {
               ) : (
                 <div className="space-y-3">
                   {readers.map((reader) => (
-                    <div
+                    <Link
                       key={reader.id}
-                      className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer hover:border-purple-300"
+                      href={`/readers/${reader.id}`}
+                      className="block bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-4 hover:shadow-md transition-shadow hover:border-purple-300"
                     >
                       <p className="text-gray-800 font-medium">{reader.name}</p>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               )}
