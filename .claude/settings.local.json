@@ -8,7 +8,14 @@
       "Bash(git remote:*)",
       "Bash(npm run build:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(taskkill:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(xargs taskkill /PID /F)",
+      "Bash(powershell -Command \"Stop-Process -Id 21760 -Force\")",
+      "Bash(cat:*)",
+      "Bash(vercel:*)"
     ]
   }
 }
